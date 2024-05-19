@@ -24,7 +24,7 @@ Make sure you have npm or yarn installed.
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/95yoel/TaskBoard-Manager.git
+   git clone https://github.com/95yoel/TaskManager-Kanban.git
    ```
 2. Navigate the proyect directory:
     ```bash
