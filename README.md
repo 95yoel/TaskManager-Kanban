@@ -28,7 +28,7 @@ Make sure you have npm or yarn installed.
    ```
 2. Navigate the proyect directory:
     ```bash
-   cd TaskBoard-Manager
+   cd TaskManager
    ```
 3. Install dependencies:
     ```bash
