@@ -1,27 +1,53 @@
-# TaskManager
+# TaskBoard
+
+TaskBoard is a Kanban-style task manager application desinged to showcase my frontend development skills. It includes features like drag-and-drop and persistent storage to make the application useful.
+
+To ensure seamless data persistence, I use <a href="https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API" target="_blank">IndexedDB</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage" target="_blank">localStorage</a>.
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.7.
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- **Drag-and-Drop Task Management:** Organize tasks by dragging and dropping them across the colums.
 
-## Code scaffolding
+- **Persistent Storage:** Save tasks using localStorage and IndexedDB for data persistence.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+
+# Getting started
+
+### Prerequisites
+
+Make sure you have npm or yarn installed.
+
+## Installation 
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/95yoel/TaskBoard-Manager.git
+   ```
+2. Navigate the proyect directory:
+    ```bash
+   cd TaskBoard-Manager
+   ```
+3. Install dependencies:
+    ```bash
+   npm install
+   ```
+   or
+
+   ```bash
+   yarn install
+   ```
+
+## Development server 
+
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
 
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+## Nexts steps
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+In the near future, I plan to create another project like this with a backend, user login, and more features. Stay tuned on my GitHub!
