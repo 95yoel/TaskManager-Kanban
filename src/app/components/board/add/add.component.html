@@ -1,15 +1,19 @@
 <div class="dialog-container">
-    <h1 class="dialog-title">Add New Task</h1>
-    <div class="dialog-content">
-      <label for="taskName">Task name</label>
-      <input id="taskName" 
-      [(ngModel)]="taskName" 
-      (keyup.enter)="onAdd()" 
-      placeholder="Enter task name" />
-    </div>
-    <div class="dialog-actions">
-      <button class="dialog-button" (click)="onCancel()">Cancel</button>
-      <button class="dialog-button" (click)="onAdd()">Add</button>
-    </div>
+  <h1 class="dialog-title">Add New Task</h1>
+  <div class="dialog-content">
+    <label for="taskName">Task name</label>
+    <input id="taskName" [(ngModel)]="taskName" (keyup.enter)="onAdd()" placeholder="Enter task name" />
+    <label for="taskDescription">Description</label>
+    <textarea id="taskDescription" [(ngModel)]="taskDescription" placeholder="Enter task description"></textarea>
+    <label for="taskPriority">Priority</label>
+    <select id="taskPriority" [(ngModel)]="taskPriority">
+      <option [ngValue]="Priorities.high">High</option>
+      <option [ngValue]="Priorities.medium">Medium</option>
+      <option [ngValue]="Priorities.low">Low</option>
+    </select>
   </div>
-  
+  <div class="dialog-actions">
+    <button class="dialog-button cancel-button" (click)="onCancel()">Cancel</button>
+    <button class="dialog-button" (click)="onAdd()" autofocus>Add</button>
+  </div>
+</div>

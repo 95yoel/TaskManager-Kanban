@@ -1,5 +1,5 @@
 export enum Priorities{
-    hight,
+    high,
     medium,
     low
 }

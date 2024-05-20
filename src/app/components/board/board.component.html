@@ -8,8 +8,12 @@
       (cdkDropListDropped)="drop($event)"
     >
       <h2>{{ column.label }}</h2>
-      <div *ngFor="let element of column.list" class="kanban-task" cdkDrag>
-        <p>{{ element }}</p>
+      <div *ngFor="let task of column.list" class="kanban-task" cdkDrag>
+        <h3>{{ task.name }}</h3>
+        <p>{{ task.description }}</p>
+        <span class="priority" [ngClass]="getPriorityClass(task.priorities)">
+          {{ getPriorityLabel(task.priorities) | titlecase }}
+        </span>
       </div>
     </div>
   </div>

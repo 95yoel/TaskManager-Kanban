@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { KanbanColumn } from '../models/columns';
+import { Task } from '../models/tasks';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,7 @@ import { KanbanColumn } from '../models/columns';
 export class TaskService {
 
   private columns: KanbanColumn[] = [
-    { label: 'Pendiente', list: ['Datos de prueba1', 'Datos de prueba2'] },
+    { label: 'Pendiente', list: [] },
     { label: 'En proceso', list: [] },
     { label: 'Finalizado', list: [] }
   ];
@@ -24,7 +25,7 @@ export class TaskService {
     this.columnsSubject.next(this.columns);
   }
 
-  addTask(task: string) {
+  addTask(task: Task) {
     this.columns[0].list.push(task);
     this.columnsSubject.next(this.columns);
   }
