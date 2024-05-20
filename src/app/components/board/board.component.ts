@@ -1,12 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { KanbanColumn } from '../../models/columns';
-import {
-  CdkDragDrop,
-  moveItemInArray,
-  transferArrayItem,
-  CdkDrag,
-  CdkDropList,
+import {CdkDragDrop,moveItemInArray,transferArrayItem,CdkDrag,CdkDropList,
 } from '@angular/cdk/drag-drop';
 
 @Component({
