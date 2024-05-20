@@ -34,7 +34,21 @@
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
-.kanban-task:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.15), 0 4px 6px rgba(0, 0, 0, 0.1);
+
+.cdk-drag-preview {
+    opacity: 0.2;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2), 0 1px 3px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    transform: rotate(5deg);
+}
+
+.cdk-drag-placeholder {
+    opacity: 0.5;
+    border: 2px dashed #ccc;
+    background-color: #fafafa;
+}
+
+
+.cdk-drag-animating {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
