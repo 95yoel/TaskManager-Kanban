@@ -9,7 +9,13 @@
     >
       <h2>{{ column.label }}</h2>
       <div *ngFor="let task of column.list" class="kanban-task" cdkDrag>
-        <h3>{{ task.name }}</h3>
+        <div class="task-header">
+          <h3>{{ task.name }}</h3>
+          <div class="icons">
+            <mat-icon class="edit-icon" (click)="deleteTask(task.id)">edit</mat-icon>
+            <mat-icon class="delete-icon" (click)="deleteTask(task.id)">delete</mat-icon>
+          </div>
+        </div>
         <p>{{ task.description }}</p>
         <span class="priority" [ngClass]="getPriorityClass(task.priorities)">
           {{ getPriorityLabel(task.priorities) | titlecase }}

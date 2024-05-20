@@ -30,6 +30,16 @@ export class TaskService {
     this.columnsSubject.next(this.columns);
   }
 
+  deleteTask(taskId: number) {
+    this.columns.forEach(column => {
+      const index = column.list.findIndex(task => task.id === taskId);
+      if (index !== -1) {
+        column.list.splice(index, 1);
+      }
+    });
+    this.columnsSubject.next(this.columns);
+  }
+
 
   
 }

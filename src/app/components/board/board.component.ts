@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit, inject } from '@angular/core';
+import {MatIconModule} from '@angular/material/icon';
 import { KanbanColumn } from '../../models/columns';
 import {CdkDragDrop,moveItemInArray,transferArrayItem,CdkDrag,CdkDropList} from '@angular/cdk/drag-drop';
 import { TaskService } from '../../services/task.service';
@@ -9,7 +10,7 @@ import { Priorities } from '../../models/priorities';
 @Component({
   selector: 'app-board',
   standalone: true,
-  imports: [CommonModule, CdkDropList, CdkDrag],
+  imports: [CommonModule, CdkDropList, CdkDrag,MatIconModule],
   templateUrl: './board.component.html',
   styleUrls: ['./board.component.scss']
 })
@@ -17,7 +18,7 @@ export class BoardComponent implements OnInit {
   public columns: KanbanColumn[] = [];
   public connectedTo: string[] = [];
 
-  constructor(private taskService: TaskService) {}
+  private readonly taskService = inject(TaskService)
 
   ngOnInit(): void {
 
@@ -26,6 +27,10 @@ export class BoardComponent implements OnInit {
       this.connectedTo = this.columns.map((_, index) => `cdk-drop-list-${index}`);
     });
     
+  }
+
+  deleteTask(taskId: number): void {
+    this.taskService.deleteTask(taskId);
   }
 
   drop(event: CdkDragDrop<Task[]>) {
