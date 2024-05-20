@@ -2,7 +2,7 @@
   <h3>{{ 'HEADER' | translation | async }}</h3>
   <div class="header-buttons">
     <button (click)="addTask()">{{ 'ADD_NEW_TASK' | translation | async }}</button>
-    <button>{{ 'CLEAR_ALL_TASKS' | translation | async }}</button>
+    <button (click)="cleanTasks()">{{ 'CLEAR_ALL_TASKS' | translation | async }}</button>
     <button (click)="changeLanguage()">{{ currentLanguage === 'en' ? 'ES' : 'EN' }}</button>
   </div>
 </header>

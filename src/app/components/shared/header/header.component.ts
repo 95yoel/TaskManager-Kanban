@@ -38,9 +38,15 @@ export class HeaderComponent implements OnInit {
     });
   }
 
+  cleanTasks(){
+    this.taskService.clearTasks()
+  }
+
   changeLanguage() {
     const newLang = this.currentLanguage === 'en' ? 'es' : 'en';
     this.translationService.setLanguage(newLang);
   }
+
+  
 
 }

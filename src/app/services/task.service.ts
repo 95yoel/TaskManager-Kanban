@@ -50,6 +50,13 @@ export class TaskService {
     this.columnsSubject.next(this.columns);
   }
 
+  clearTasks() {
+    this.columns.forEach(column => {
+      column.list = [];
+    });
+    this.columnsSubject.next(this.columns);
+  }
+
 
   
 }
