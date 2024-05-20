@@ -4,11 +4,13 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import { Task } from '../../../models/tasks';
 import { Priorities } from '../../../models/priorities';
+import { TranslationPipe } from '../../../pipe/translation.pipe';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'app-edit',
   standalone: true,
-  imports: [FormsModule,MatFormFieldModule],
+  imports: [FormsModule,MatFormFieldModule,TranslationPipe,AsyncPipe],
   templateUrl: './edit.component.html',
   styleUrl: './edit.component.scss'
 })

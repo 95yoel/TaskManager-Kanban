@@ -8,11 +8,12 @@ import { Task } from '../../models/tasks';
 import { Priorities } from '../../models/priorities';
 import { EditComponent } from './edit/edit.component';
 import { MatDialog } from '@angular/material/dialog';
+import { TranslationPipe } from '../../pipe/translation.pipe';
 
 @Component({
   selector: 'app-board',
   standalone: true,
-  imports: [CommonModule, CdkDropList, CdkDrag,MatIconModule],
+  imports: [CommonModule, CdkDropList, CdkDrag,MatIconModule,TranslationPipe],
   templateUrl: './board.component.html',
   styleUrls: ['./board.component.scss']
 })

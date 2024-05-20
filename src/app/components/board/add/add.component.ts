@@ -4,13 +4,15 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import { Task } from '../../../models/tasks';
 import { Priorities } from '../../../models/priorities';
+import { TranslationPipe } from "../../../pipe/translation.pipe";
+import { AsyncPipe } from '@angular/common';
 
 @Component({
-  selector: 'app-add',
-  standalone: true,
-  imports: [FormsModule,MatFormFieldModule],
-  templateUrl: './add.component.html',
-  styleUrl: './add.component.scss'
+    selector: 'app-add',
+    standalone: true,
+    templateUrl: './add.component.html',
+    styleUrl: './add.component.scss',
+    imports: [FormsModule, MatFormFieldModule, TranslationPipe,AsyncPipe]
 })
 export class AddComponent {
   public taskName = '';

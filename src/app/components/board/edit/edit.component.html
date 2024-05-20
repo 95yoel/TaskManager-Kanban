@@ -1,20 +1,21 @@
 <div class="dialog-container">
-    <h1 class="dialog-title">Edit Task</h1>
-    <div class="dialog-content">
-      <label for="taskName">Task name</label>
-      <input id="taskName" [(ngModel)]="taskName" (keyup.enter)="onSave()" placeholder="Enter task name" />
-      <label for="taskDescription">Description</label>
-      <textarea id="taskDescription" [(ngModel)]="taskDescription" placeholder="Enter task description"></textarea>
-      <label for="taskPriority">Priority</label>
-      <select id="taskPriority" [(ngModel)]="taskPriority">
-        <option [ngValue]="Priorities.high">High</option>
-        <option [ngValue]="Priorities.medium">Medium</option>
-        <option [ngValue]="Priorities.low">Low</option>
-      </select>
-    </div>
-    <div class="dialog-actions">
-      <button class="dialog-button cancel-button" (click)="onCancel()">Cancel</button>
-      <button class="dialog-button" (click)="onSave()">Save</button>
-    </div>
+  <h1 class="dialog-title">{{ 'ADD_NEW_TASK' | translation | async }}</h1>
+  <div class="dialog-content">
+    <label for="taskName">{{ 'TASK_NAME' | translation | async }}</label>
+    <input id="taskName" [(ngModel)]="taskName" (keyup.enter)="onSave()"
+      placeholder="{{ 'ENTER_TASK_NAME' | translation | async }}" />
+    <label for="taskDescription">{{ 'DESCRIPTION' | translation | async }}</label>
+    <textarea id="taskDescription" [(ngModel)]="taskDescription"
+      placeholder="{{ 'ENTER_TASK_DESCRIPTION' | translation | async }}"></textarea>
+    <label for="taskPriority">{{ 'PRIORITY' | translation | async }}</label>
+    <select id="taskPriority" [(ngModel)]="taskPriority">
+      <option [ngValue]="Priorities.high">{{ 'HIGH' | translation | async }}</option>
+      <option [ngValue]="Priorities.medium">{{ 'MEDIUM' | translation | async }}</option>
+      <option [ngValue]="Priorities.low">{{ 'LOW' | translation | async }}</option>
+    </select>
   </div>
-  
+  <div class="dialog-actions">
+    <button class="dialog-button cancel-button" (click)="onCancel()">{{ 'CANCEL' | translation | async }}</button>
+    <button class="dialog-button" (click)="onSave()" autofocus>{{ 'SAVE' | translation | async }}</button>
+  </div>
+</div>

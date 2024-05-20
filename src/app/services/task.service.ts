@@ -9,9 +9,9 @@ import { Task } from '../models/tasks';
 export class TaskService {
 
   private columns: KanbanColumn[] = [
-    { label: 'Pendiente', list: [] },
-    { label: 'En proceso', list: [] },
-    { label: 'Finalizado', list: [] }
+    { label: 'PENDING', list: [] },
+    { label: 'IN_PROCESS', list: [] },
+    { label: 'FINALIZED', list: [] }
   ];
 
   private columnsSubject = new BehaviorSubject<KanbanColumn[]>(this.columns);
