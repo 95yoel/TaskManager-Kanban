@@ -40,6 +40,16 @@ export class TaskService {
     this.columnsSubject.next(this.columns);
   }
 
+  updateTask(updatedTask: Task) {
+    this.columns.forEach(column => {
+      const index = column.list.findIndex(task => task.id === updatedTask.id);
+      if (index !== -1) {
+        column.list[index] = updatedTask;
+      }
+    });
+    this.columnsSubject.next(this.columns);
+  }
+
 
   
 }

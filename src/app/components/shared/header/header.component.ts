@@ -12,6 +12,10 @@ import { TaskService } from '../../../services/task.service';
 })
 export class HeaderComponent {
 
+  public appName:string = 'TaskManager'
+  public btnAddNewTask:string = 'ADD NEW TASK'
+  public btnClearTasks:string = 'CLEAR ALL TASKS'
+
   private readonly dialog = inject(MatDialog)
   private readonly taskService = inject(TaskService)
 

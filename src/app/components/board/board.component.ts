@@ -6,6 +6,8 @@ import {CdkDragDrop,moveItemInArray,transferArrayItem,CdkDrag,CdkDropList} from 
 import { TaskService } from '../../services/task.service';
 import { Task } from '../../models/tasks';
 import { Priorities } from '../../models/priorities';
+import { EditComponent } from './edit/edit.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-board',
@@ -19,6 +21,7 @@ export class BoardComponent implements OnInit {
   public connectedTo: string[] = [];
 
   private readonly taskService = inject(TaskService)
+  private readonly dialog = inject(MatDialog)
 
   ngOnInit(): void {
 
@@ -45,6 +48,23 @@ export class BoardComponent implements OnInit {
       );
     }
     this.taskService.updateColumns(this.columns);
+  }
+
+  editTask(taskId: number): void {
+    const task = this.columns
+      .flatMap(column => column.list)
+      .find(task => task.id === taskId);
+    if (task) {
+      const dialogRef = this.dialog.open(EditComponent, {
+        data: task
+      });
+
+      dialogRef.afterClosed().subscribe(result => {
+        if (result) {
+          this.taskService.updateTask(result);
+        }
+      });
+    }
   }
 
   getPriorityClass(priority: Priorities): string {
