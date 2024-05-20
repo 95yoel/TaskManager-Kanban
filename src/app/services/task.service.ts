@@ -24,6 +24,11 @@ export class TaskService {
     this.columnsSubject.next(this.columns);
   }
 
+  addTask(task: string) {
+    this.columns[0].list.push(task);
+    this.columnsSubject.next(this.columns);
+  }
+
 
   
 }
