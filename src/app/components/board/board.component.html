@@ -2,7 +2,9 @@
 
     <div class="kanban-column" *ngFor="let column of columns">
         <h2>{{column.label}}</h2>
-        <p *ngFor="let element of column.list">{{element}}</p>
+        <div *ngFor="let element of column.list" class="kanban-task">
+            <p>{{element}}</p>
+        </div>
     </div>
     
 </div>

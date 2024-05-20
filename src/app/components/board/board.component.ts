@@ -1,10 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-
-export type KanbanColumn ={
-  label:string
-  list:string[]
-}
+import { Component, OnInit } from '@angular/core';
+import { KanbanColumn } from '../../models/columns';
 
 @Component({
   selector: 'app-board',
@@ -13,15 +9,15 @@ export type KanbanColumn ={
   templateUrl: './board.component.html',
   styleUrl: './board.component.scss'
 })
-export class BoardComponent {
-  public columns:KanbanColumn[]   = []
+export class BoardComponent implements OnInit{
+  public columns:   KanbanColumn[] = []
 
-  public pendingTasks:string[]    = ['Limpiar']
-  public inProcessTasks:string[]  = ['Fregar']
-  public doneTasks:string[]       = ['Recoger']
+  public inProcessTasks:  string[] = []
+  public pendingTasks:    string[] = ['Datos de prueba1','Datos de prueba2']
+  public doneTasks:       string[] = []
 
-  private readonly initColumns = () =>{
-    this.columns = [
+  private readonly initColumns = ():KanbanColumn[] =>{
+    return this.columns = [
       {label:'Pendiente',list:this.pendingTasks},
       {label:'En proceso',list:this.inProcessTasks},
       {label:'Finalizado',list:this.doneTasks}
